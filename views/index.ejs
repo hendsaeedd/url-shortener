@@ -60,16 +60,16 @@
     <h1>URL Shortener</h1>
 
     <div class="form-container">
-        <form id="urlForm" method="POST">
+        <form id="urlForm" action="/create" method="POST">
             <label for="urlInput">Enter URL:</label>
-            <input type="text" id="urlInput" name="urlInput" required placeholder="http://this.is.way/too/long?isnt=it">
+            <input type="text" id="urlInput" name="original" required placeholder="http://this.is.way/too/long?isnt=it">
             <label for="abbreviationInput">Enter Abbreviation:</label>
-            <input type="text" id="abbreviationInput" name="abbreviationInput" required placeholder="http://localhost:3000/......">
+            <input type="text" id="abbreviationInput" name="short" required placeholder="http://localhost:3000/......">
             <input type="submit" value="Shorten URL">
         </form>
     </div>
 
-    <div class="table-container">
+    <!-- <div class="table-container">
         <table id="urlTable">
             <tr>
                 <th>Original URL</th>
@@ -87,6 +87,21 @@
                 <td><a href="https://drive.google.com/drive/u/1/folders/1bpiBKNBd9n0Z79wrZvHVT1KyA9OBROLx">https://drive.google.com/drive/u/1/folders/1bpiBKNBd9n0Z79wrZvHVT1KyA9OBROLx</a></td>
                 <td><a href="http://localhost:3000/himym">http://localhost:3000/himym</a></td>
             </tr>
+        </table>
+    </div> -->
+
+    <div class="table-container">
+        <table id="urlTable">
+            <tr>
+                <th>Original URL</th>
+                <th>Shortened URL</th>
+            </tr>
+            <% urls.forEach(function(url) { %>
+                <tr>
+                    <td><a href="<%= url.original %>"><%= url.original %></a></td>
+                    <td><a href="<%= url.short %>"><%= url.short %></a></td>
+                </tr>
+            <% }); %>
         </table>
     </div>
 
