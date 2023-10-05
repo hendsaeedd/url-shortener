@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         originalUrls[data.short] = data.original;
         appendRow(urlTable, data.original, data.short);
       })
