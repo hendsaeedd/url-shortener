@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const shortLink = document.createElement("a");
 
-    // redirect to the original url
     shortLink.href = short;
     shortLink.textContent = `http://localhost:3000/${short}`
 
