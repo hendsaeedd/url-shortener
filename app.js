@@ -9,6 +9,7 @@ const mongoose  = require('mongoose');
 const url = 'mongodb://127.0.0.1:27017/URL';
 
 const indexRouter = require('./routes/index');
+const urlRouter = require('./routes/url');
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// url routes
+app.use('/', urlRouter);
 
 //connect to mongodb
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })

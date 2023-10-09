@@ -49,9 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shortLink = document.createElement("a");
 
     // redirect to the original url
-    shortLink.href = originalUrls[short];
-    shortLink.textContent = short;
-    shortLink.target = "_blank";
+    shortLink.href = short;
+    shortLink.textContent = `http://localhost:3000/${short}`
 
     // append the links to the table
     cell1.appendChild(originalLink);

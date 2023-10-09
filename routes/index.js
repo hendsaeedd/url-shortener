@@ -15,7 +15,10 @@ router.get('/', async (req, res) => {
 // create new url
 router.post('/create', async (req, res) => {
     try {
-        const { original, short } = req.body;
+        const original = req.body.original;
+        // short url
+        // const short = 'http://localhost:3000/' + req.body.short;
+        const short = req.body.short;
         // create new url
         const newUrl = new url({ original, short });
         await newUrl.save();
